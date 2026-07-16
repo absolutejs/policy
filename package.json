@@ -1,6 +1,6 @@
 {
   "name": "@absolutejs/policy",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Versioned provider-neutral policy lifecycle, simulation, and AuthZEN adapter for AI agent actions.",
   "type": "module",
   "license": "MIT",
@@ -36,7 +36,7 @@
     "format": "prettier --write \"./**/*.{ts,json,md}\"",
     "typecheck": "tsc --noEmit",
     "test": "bun test",
-    "build": "rm -rf dist && bun build src/index.ts src/manifest.ts --outdir dist --target=bun --external @sinclair/typebox && tsc -p tsconfig.build.json && absolute-manifest emit",
+    "build": "rm -rf dist && bun build src/index.ts src/manifest.ts --outdir dist --target=bun --external @absolutejs/manifest --external @sinclair/typebox && tsc -p tsconfig.build.json && absolute-manifest emit",
     "check:package": "bun run format && bun run typecheck && bun run test && bun run build"
   },
   "dependencies": {

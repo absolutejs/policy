@@ -1,4 +1,6 @@
 export type PolicyStatus = "draft" | "active" | "retired";
+export * from "./aarp";
+export * from "./coaz";
 export type PolicyDocument = {
   createdAt: number;
   createdBy: string;
