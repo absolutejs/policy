@@ -11,6 +11,36 @@ export const manifest = defineManifest<Record<string, never>>()({
     name: "@absolutejs/policy",
     tagline: "Change agent policy safely, with evidence.",
   },
+  product: {
+    blocks: [
+      {
+        category: "security",
+        componentExport: "PolicyReview",
+        description:
+          "Review a versioned policy, simulation evidence, and activation posture before changing enforcement.",
+        frameworks: ["react", "client"],
+        id: "policy_review",
+        props: Type.Object({
+          policyId: Type.String({ minLength: 1 }),
+          version: Type.Optional(Type.Integer({ minimum: 1 })),
+        }),
+        title: "Policy review",
+      },
+    ],
+    events: [
+      {
+        description:
+          "Emitted after an approved immutable policy version becomes active.",
+        id: "policy_activated",
+        schema: Type.Object({
+          policyId: Type.String(),
+          version: Type.Integer({ minimum: 1 }),
+        }),
+        source: "package",
+        title: "Policy activated",
+      },
+    ],
+  },
   implements: [
     defineImplementation<never>()({
       contract: "policy/store",
