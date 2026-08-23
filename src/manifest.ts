@@ -1,5 +1,5 @@
 import { defineImplementation, defineManifest } from "@absolutejs/manifest";
-import { Type } from "@sinclair/typebox";
+import { Type } from "typebox";
 export const manifest = defineManifest<Record<string, never>>()({
   contract: 2,
   identity: {
