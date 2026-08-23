@@ -1,6 +1,6 @@
 {
   "name": "@absolutejs/policy",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Versioned provider-neutral policy lifecycle, simulation, and AuthZEN adapter for AI agent actions.",
   "type": "module",
   "license": "MIT",
